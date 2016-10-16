@@ -36,5 +36,28 @@ angular.module("baseModule")
                 return object;
             };
 
+            $scope.requestPassword = function () {
+                console.log("in function");
+                BootstrapDialog.show({
+                    type: BootstrapDialog.TYPE_DANGER,
+                    title: "Area Restricted",
+                    message: $('<div style="height:200px;"></div>').load('/Views/Admin/RequestPassword.html'),
+                    cssClass: 'password-modal',
+                    buttons: [{
+                        label: 'OK',
+                        cssClass: 'btn-success',
+                        action: function () {
+                            alert("doing stuff");
+                        }
+                    }, {
+                        label: 'Avbryt',
+                        cssClass: 'btn-warning',
+                        action: function (dialogItself) {
+                            dialogItself.close();
+                        }
+                    }]
+                });
+            }
+
         }
     ]);

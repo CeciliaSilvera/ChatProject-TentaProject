@@ -10,7 +10,7 @@
                 <span class="icon-bar"></span>
 
             </button>
-            <a class="navbar-brand" href="/"><span class="glyphicon glyphicon-home"></span>Chat Project</a>
+            <a class="navbar-brand" href="/"><span class="glyphicon glyphicon-home"></span>  Chat Project</a>
         </div>
         <div class="collapse navbar-collapse" id="navbar">
             <ul class="nav navbar-nav">
@@ -18,9 +18,14 @@
             
             </ul>
             <ul class="nav navbar-nav navbar-right">
-                <li ng-class="{active: $route.current.activeTab == 'Admin'}"><a href="/Admin">
-                    <span class="glyphicon glyphicon-log-in"></span> Admin</a></li>
+                <li ng-click="requestPassword()"><a href="/#">
+                    <span class="glyphicon glyphicon-log-in"></span>  Admin Login</a></li>
             </ul>
+            <!--<li ng-class="{active: $route.current.activeTab == 'Admin'}">
+                <a href="/Admin">
+                    <span class="glyphicon glyphicon-log-in"></span>  Admin Login
+                </a>
+            </li>-->
 
         </div>
 

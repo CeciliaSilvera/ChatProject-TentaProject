@@ -9,7 +9,7 @@ angular.module("baseModule")
             $scope.title = "Edit Channels";
             $scope.newChannel = {};
 
-           
+            
             $scope.addChannel = function () {
                 channelsApi.addChannel($scope.newChannel)
                     .then(function (data) {
