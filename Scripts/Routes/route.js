@@ -13,6 +13,13 @@ angular.module("baseModule")
                 controller: "HomeController",
                 caseInsensitiveMatch: true,
                 activeTab: "Home"
+            })
+            .when("/Admin", {
+                templateUrl: "Views/Admin/EditChannel.html",
+                controller: "AdminController",
+                caseInsensitiveMatch: true,
+                activeTab: "Admin"
             });
+            
         }
     ]);

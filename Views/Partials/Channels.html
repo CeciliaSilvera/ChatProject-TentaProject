@@ -1,0 +1,29 @@
+﻿<div class="col-md-12">
+    <table class="table">
+        <tr>
+            <th class="col-md-10">Name</th>
+            
+                <th class="col-md-1"></th>
+                <th class="col-md-1"></th>
+            
+        </tr>
+        <tr ng-repeat="channel in channels track by $index">
+            <td ng-bind="channel.name"></td>
+            <td>
+                <button type="button"
+                        class="btn"
+                        ng-click="requestPasswordFavorite()">
+                    <span class="glyphicon glyphicon-star-empty"></span>
+                </button>
+            </td>
+            <td>
+                <button type="button"
+                        class="btn"
+                        ng-click="requestPasswordDelete()">
+                    <span class="glyphicon glyphicon-trash"></span>
+                </button>
+            </td>    
+        </tr>
+    </table>
+</div>
+

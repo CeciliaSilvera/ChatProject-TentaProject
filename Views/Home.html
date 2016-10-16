@@ -1,5 +1,14 @@
 ﻿<div class="row">
-    <div class="col-md-12">
-        <h1 ng-bind="title"></h1>
+    <div class="col-md-12 page-header">
+        <h2 ng-bind="title"></h2>
+        <h2><small ng-bind="subTitle"></small></h2>
+        <h2><small ng-bind="signature"></small></h2>
+    </div>
+</div>
+<div class="row">
+
+    <div class="col-md-8 col-md-offset-2">
+        <h4 class="modal-header">channels</h4>
+        <div ng-include="'Views/Partials/Channels.html'"></div>
     </div>
 </div>
