@@ -13,8 +13,8 @@
                 })[0];
             });
 
-            $scope.addMessages = function () {
-               
+            $scope.addMessage = function (channelId) {
+                $scope.newMessage.channelId = channelId;
                 messagesApi.addMessages($scope.newMessage)
                     .then(function (response) {
                         $scope.messages.push($scope.newMessage);

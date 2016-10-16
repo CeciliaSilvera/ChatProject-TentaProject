@@ -1,16 +1,16 @@
 ﻿<!-------Page header------------>
 <div class="row">
-    <div class="col-md-12">
+    <div class="col-md-6 col-md-offset-3">
         <h3 ng-bind="channel.name" class="page-header"></h3>
     </div>
 
     <!--<button class="btn btn-success"><span class="glyphicon glyphicon-plus">  new</span></button>-->  
 </div>
 <!-------Add new messages------->
-<div class="row col-md-6 bg-warning">
-    <div class="col-md-12">
+<div class="row">
+    <div class="col-md-6 col-md-offset-3 bg-warning">
 
-        <form ng-submit="addMessage(this + {channelId:channel.id})">
+        <form ng-submit="addMessage(channel.id)">
                 <div class="form-group row">
                     <label for="example-author-input" class="col-md-2 col-form-label">Author</label>
                     <div class="col-md-10">
@@ -30,7 +30,7 @@
 </div>
 <!------Get all messages for channel------->
 <div class="row">
-    <div ng-include="'/Views/Partials/Messages.html'"></div>
+    <div ng-include="'/Views/Partials/Messages.html'" class="col-md-6 col-md-offset-3"></div>
 </div>
 
 
