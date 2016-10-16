@@ -40,7 +40,7 @@ angular.module("baseModule")
                 console.log("in function");
                 BootstrapDialog.show({
                     type: BootstrapDialog.TYPE_DANGER,
-                    title: "Area Restricted",
+                    title: "Login",
                     message: $('<div style="height:200px;"></div>').load('/Views/Admin/RequestPassword.html'),
                     cssClass: 'password-modal',
                     buttons: [{
@@ -51,7 +51,7 @@ angular.module("baseModule")
                         }
                     }, {
                         label: 'Avbryt',
-                        cssClass: 'btn-warning',
+                        cssClass: 'btn-default',
                         action: function (dialogItself) {
                             dialogItself.close();
                         }

@@ -23,7 +23,7 @@ angular.module("baseModule")
             this.addChannel = function (newChannel) {
                 var deferred = $q.defer();
 
-                $http.channel(channels, newChannel)
+                $http.post(channels, newChannel)
                     .then(function (response) {
                         console.log(response);
                         deferred.resolve(response.data);

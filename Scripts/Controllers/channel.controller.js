@@ -6,6 +6,7 @@
         "messagesApi",
         function ($scope, $routeParams, channelsApi, messagesApi) {
             $scope.newMessage = {};
+            $scope.newChannel = {};
 
             $scope.$watch("channels", function (channels) {
                 $scope.channel = $scope.channels.filter(function (channel) {
@@ -19,6 +20,15 @@
                     .then(function (response) {
                         $scope.messages.push($scope.newMessage);
                         $scope.newMessage = {};
+                    });
+            }
+            $scope.addChannel = function () {
+                $scope.newChannel.messages = [];
+                console.log("in function");
+                channelsApi.addChannel($scope.newChannel)
+                    .then(function (response) {
+                        $scope.channels.push($scope.newChannel);
+                        $scope.newChannel = {};
                     });
             }
             
