@@ -19,6 +19,13 @@ angular.module("baseModule")
                 controller: "AdminController",
                 caseInsensitiveMatch: true,
                 activeTab: "Admin"
+            })
+            .when("/Channel/:id", {
+                templateUrl: "Views/Partials/Channel.html",
+                controller: "ChannelController",
+                caseInsensitiveMatch: true,
+                activeTab: "Channel"
+
             });
             
         }

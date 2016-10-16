@@ -11,9 +11,11 @@ angular.module("baseModule")
         "channelsApi",
         function ($scope, $routeParams, $route, $location, messagesApi,
              channelsApi) {
-
+            
             $scope.$route = $route;
             $scope.channels = [];
+            $scope.messages = [];
+            
 
             channelsApi.getChannels()
                 .then(function (data) {
@@ -21,8 +23,18 @@ angular.module("baseModule")
                         $scope.channels = data;
                 });
 
-            $scope.go = function (url) {
+            messagesApi.getMessages()
+               .then(function (data) {
+                   if (data != null)
+                       $scope.messages = data;
+               });
+           
+           
+            $scope.go = function (url, object) {
                 $location.path(url);
+                console.log(object);
+                return object;
             };
+
         }
     ]);

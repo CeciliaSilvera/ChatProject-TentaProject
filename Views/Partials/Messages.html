@@ -1,0 +1,15 @@
+﻿<div class="col-md-12 table-responsive">
+    <table class="table table-hover">
+        <tr>
+            <th class="col-md-1">Sent</th>
+            <th class="col-md-1">Author</th>
+            <th class="col-md-4" >Message Body</th>
+        </tr>
+        <tr ng-repeat="message in messages track by $index" ng-if="message.channelId == channel.id">
+            <td  ng-bind="message.timeSent | date: 'short'"></td>
+            <td  ng-bind="message.author"></td>
+            <td  ng-bind="message.body"></td>
+
+        </tr>
+    </table>
+</div>

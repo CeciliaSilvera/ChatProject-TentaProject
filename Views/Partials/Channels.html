@@ -8,7 +8,7 @@
             
         </tr>
         <tr ng-repeat="channel in channels track by $index">
-            <td ng-bind="channel.name"></td>
+            <td ng-bind="channel.name" ng-click="go('/Channel/' + channel.id, channel)"></td>
             <td>
                 <button type="button"
                         class="btn"
