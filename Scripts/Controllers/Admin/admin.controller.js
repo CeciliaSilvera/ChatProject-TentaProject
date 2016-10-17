@@ -8,6 +8,7 @@ angular.module("baseModule")
         function ($scope, channelsApi) {
             $scope.title = "Edit Channels";
             $scope.newChannel = {};
+            $scope.starEmpty = true;
 
 
             $scope.addChannel = function () {
@@ -20,9 +21,17 @@ angular.module("baseModule")
             }
             
             
-            $scope.makeFavorite = function (channel) {
+            $scope.makeFavorite = function (channel, $index) {
+                $scope.starEmpty = false;
+
                 $scope.favorites.push(channel);
                 $scope.saveFavorites();
+                
+
+                    $scope.channels.splice($index, 1);
+
+                
+                
             }
 
             $scope.deleteChannel = function (channel) {
