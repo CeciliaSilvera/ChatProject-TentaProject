@@ -9,24 +9,31 @@ angular.module("baseModule")
             $scope.title = "Edit Channels";
             $scope.newChannel = {};
 
-            
+
             $scope.addChannel = function () {
                 channelsApi.addChannel($scope.newChannel)
                     .then(function (data) {
                         console.log(data);
                         $scope.channels.push(data);
-                       
+
                     });
-            };
+            }
+            
+            
+            $scope.makeFavorite = function (channel) {
+                $scope.favorites.push(channel);
+                $scope.saveFavorites();
+            }
 
-            $scope.deleteMessage = function (message) {
-                postsApi.deleteMessage(message.id)
+            $scope.deleteChannel = function (channel) {
+                console.log("in function");
+                channelsApi.deleteChannel(channel.id)
                     .then(function () {
-                        var index = $scope.messages.map(function(message) {
-                            return message.id;
-                        }).indexOf(message.id);
+                        var index = $scope.channels.map(function (channel) {
+                            return channel.id;
+                        }).indexOf(channel.id);
 
-                        $scope.messages.splice(index, 1);
+                        $scope.channels.splice(index, 1);
                     });
             }
 

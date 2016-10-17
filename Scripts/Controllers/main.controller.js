@@ -15,7 +15,8 @@ angular.module("baseModule")
             $scope.$route = $route;
             $scope.channels = [];
             $scope.messages = [];
-            
+            $scope.favorites = [];
+
 
             channelsApi.getChannels()
                 .then(function (data) {
@@ -57,6 +58,18 @@ angular.module("baseModule")
                         }
                     }]
                 });
+            }
+
+            $scope.saveFavorites = function () {
+                var jsonString = JSON.stringify($scope.favorites);
+                localStorage.setItem("favorites", jsonString);
+            }
+
+            $scope.loadFavorites = function () {
+                var data = localStorage.getItem("favorites");
+                if (data) {
+                    $scope.favorites = JSON.parse(data);
+                }
             }
 
         }

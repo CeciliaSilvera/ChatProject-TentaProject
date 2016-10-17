@@ -14,11 +14,11 @@ angular.module("baseModule")
                 caseInsensitiveMatch: true,
                 activeTab: "Home"
             })
-            .when("/Admin", {
-                templateUrl: "Views/Admin/EditChannel.html",
-                controller: "AdminController",
+            .when("/Favorites", {
+                templateUrl: "Views/Admin/Favorites.html",
+                controller: "FavoritesController",
                 caseInsensitiveMatch: true,
-                activeTab: "Admin"
+                activeTab: "Favorites"
             })
             .when("/Channel/:id", {
                 templateUrl: "Views/Partials/Channel.html",

@@ -1,17 +1,18 @@
-﻿<!-------Page header------------>
-<div class="row">
-    <div class="col-md-6 col-md-offset-3">
-        <h3 ng-bind="channel.name" class="page-header"></h3>
-    </div>
+﻿
+        <!-------Page header------------>
+        <div class="row">
+            <div class="col-md-10 col-md-offset-1">
+                <h3 ng-bind="channel.name" class="page-header"></h3>
+            </div>
+        </div>
+        <!-------Add new messages------->
+        <div class="row" id="new-message">
+            <div class="col-md-8 col-md-offset-2" ng-include="'/Views/Partials/NewMessage.html'"></div>
+        </div>
+        <!------Get all messages for channel------->
+        <div class="row">
+            <div ng-include="'/Views/Partials/Messages.html'" class="col-md-10 col-md-offset-1" ></div>
+        </div>
 
-</div>
-<!-------Add new messages------->
-<div class="row">
-    <div ng-include="'/Views/Partials/NewMessage.html'" class="col-md-6 col-md-offset-3"></div>
-</div>
-<!------Get all messages for channel------->
-<div class="row">
-    <div ng-include="'/Views/Partials/Messages.html'" class="col-md-6 col-md-offset-3"></div>
-</div>
 
 

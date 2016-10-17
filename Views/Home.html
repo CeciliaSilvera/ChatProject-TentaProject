@@ -6,12 +6,12 @@
     </div>
 </div>
 <div class="row" ng-init="new = false">
-    <button ng-click="new = true" class="btn btn-success"><span class="glyphicon glyphicon-plus">  new</span></button>
+    <button ng-click="new = true" id="btn-new" class="btn btn-success"><span id="btn-new-icon" class="glyphicon glyphicon-plus"></span>new</button>
     
 
     <div class="col-md-6 col-md-offset-3">
         <h4 class="modal-header">channels</h4>
-        <div ng-show="new" ng-controller="ChannelController" class="col-md-10 col-md-offset-1">
+        <div ng-show="new" ng-controller="ChannelController" id="New-Channel" class="col-md-10 col-md-offset-1">
             <form class="form-horizontal" ng-submit="addChannel()">
                 <div class="form-group">
                     <label for="new-channel">New Channel:</label>
@@ -24,3 +24,4 @@
         <div ng-include="'Views/Partials/Channels.html'"></div>
     </div>
 </div>
+
