@@ -8,20 +8,8 @@
 
         </tr>
         <tr style="cursor:pointer;" ng-repeat="channel in favorites track by $index">
-            <td ng-bind="channel.name" ng-click="go('../Partials/Channel/' + channel.id, channel)"></td>
-            <td>
-                <button type="button"
-                        class="btn"
-                        ng-controller="AdminController"
-                        ng-click="makeFavorite(channel)">
-                    <span ng-show="starEmpty"
-                          ng-click="starEmpty = false"
-                          class="glyphicon glyphicon-star-empty"></span>
-                    <span ng-hide="starEmpty"
-                          ng-click="starEmpty = true"
-                          class="glyphicon glyphicon-star"></span>
-                </button>
-            </td>
+            <td ng-bind="channel.name" ng-click="go('/Channel/' + channel.id, channel)"></td>
+            
             <td>
                 <button type="button"
                         class="btn"
@@ -30,6 +18,7 @@
                     <span class="glyphicon glyphicon-trash"></span>
                 </button>
             </td>
+
         </tr>
     </table>
 </div>
