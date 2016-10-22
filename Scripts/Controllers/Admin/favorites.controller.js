@@ -3,10 +3,11 @@
         "$scope",
         "$routeParams",
         function ($scope, $routeParams) {
+            $scope.favs = [];
 
             setTimeout(function () {
-                $scope.favorites = $scope.favorites.filter(function (favorites) {
-                    return favorites;
+                $scope.favs = $scope.channels.filter(function (channel) {
+                    return $scope.favorites.indexOf(channel.id) != -1;
                 });
 
             }, 100);

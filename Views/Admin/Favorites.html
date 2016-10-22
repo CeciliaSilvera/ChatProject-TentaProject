@@ -1,5 +1,5 @@
 ﻿<div class="col-md-12 table-responsive" ng-controller="FavoritesController">
-    <table class="table table-hover">
+    <table class="table">
         <tr>
             <th class="col-md-10">Name</th>
 
@@ -7,12 +7,19 @@
             <th class="col-md-1"></th>
 
         </tr>
-        <tr style="cursor:pointer;" ng-repeat="channel in favorites track by $index">
+        <tr style="cursor:pointer;" ng-repeat="channel in favorites track by $index" class="channels">
             <td ng-bind="channel.name" ng-click="go('/Channel/' + channel.id, channel)"></td>
-            
             <td>
                 <button type="button"
-                        class="btn"
+                        class="btn favorite-btn">
+                        
+                    <span class="glyphicon glyphicon-star-empty"></span>
+
+                </button>
+            </td>
+            <td>
+                <button type="button"
+                        class="btn trash-btn"
                         ng-controller="AdminController"
                         ng-click="deleteChannel(channel)">
                     <span class="glyphicon glyphicon-trash"></span>

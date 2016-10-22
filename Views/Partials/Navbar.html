@@ -15,11 +15,11 @@
         <div class="collapse navbar-collapse" id="navbar">
             <ul class="nav navbar-nav">
                 <li ng-class="{active: $route.current.activeTab == 'Home'}"><a href="/">Home</a></li>
-                <li ng-class="{active: $route.current.activeTab == 'Favorites'}"><a href="/Favorites">my Favorites</a></li>
+                <li ng-hide="admin" ng-class="{active: $route.current.activeTab == 'Favorites'}"><a href="/Favorites">my Favorites</a></li>
             
             </ul>
             <ul class="nav navbar-nav navbar-right">
-                <li ng-click="requestPassword()"><a href="/#">
+                <li><a href="" role="button" data-toggle="modal" data-target="#admin-login" >
                     <span class="glyphicon glyphicon-log-in"></span>  Admin Login</a></li>
             </ul>
             <!--<li ng-class="{active: $route.current.activeTab == 'Admin'}">

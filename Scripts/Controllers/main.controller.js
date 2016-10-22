@@ -16,6 +16,7 @@ angular.module("baseModule")
             $scope.channels = [];
             $scope.messages = [];
             $scope.favorites = [];
+            $scope.admin = false;
 
 
             channelsApi.getChannels()
@@ -23,6 +24,8 @@ angular.module("baseModule")
                     if (data != null)
                         $scope.channels = data;
                 });
+          
+           
 
             messagesApi.getMessages()
                .then(function (data) {
@@ -37,31 +40,14 @@ angular.module("baseModule")
                 return object;
             };
 
-            $scope.requestPassword = function () {
-                console.log("in function");
-                BootstrapDialog.show({
-                    type: BootstrapDialog.TYPE_DANGER,
-                    title: "Login",
-                    message: $('<div style="height:200px;"></div>').load('/Views/Admin/RequestPassword.html'),
-                    cssClass: 'password-modal',
-                    buttons: [{
-                        label: 'OK',
-                        cssClass: 'btn-success',
-                        action: function () {
-                            alert("doing stuff");
-                        }
-                    }, {
-                        label: 'Avbryt',
-                        cssClass: 'btn-default',
-                        action: function (dialogItself) {
-                            dialogItself.close();
-                        }
-                    }]
-                });
-            }
+            
 
             $scope.saveFavorites = function () {
-                var jsonString = JSON.stringify($scope.favorites);
+                var myFavs = $scope.favorites.map(function (fav) {
+                    return fav.id;
+                });
+
+                var jsonString = JSON.stringify(myFavs);
                 localStorage.setItem("favorites", jsonString);
             }
 

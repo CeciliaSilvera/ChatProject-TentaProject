@@ -1,7 +1,4 @@
 ﻿
-.modal-body{
-    height:200px;
-}
 .navbar{
     background-color: darkcyan !important;
     border:none !important;
@@ -16,19 +13,26 @@ a.navbar-brand, .navbar-nav > li > a{
 .navbar > a:hover{
     color: darkorange !important;
 }
-#btn-new{
-    position:relative;
-    top:28px;
-    padding:2px;
-    padding-right:4px;
-    
-}
-#btn-new-icon{
-    left:3px;
-    padding-right:4px;
+
+#btn-new-icon, #btn-new{
+    padding-right:5px;
 }
 
 #New-Channel, #new-message{
     margin-bottom:20px;
 }
+.favorite-btn-o, .trash-btn{
+    background-color:white;
+    color:darkslategray;
+}
+.channels, .favorite-btn-o, .trash-btn, .favorite-btn{
+    font-size:18px;
+}
 
+.favorite-btn {
+    background-color:white;
+    color:darkorange;
+}
+#login-button{
+    margin-top:20px;
+}

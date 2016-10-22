@@ -11,14 +11,14 @@
 <body ng-controller="MainController">
     <header ng-include="'Views/Partials/Navbar.html'"></header>
     <main ng-view class="container-fluid"></main>
-
+    <password-modal admin="admin"></password-modal>
     <!--Third Party Stuff-->
     <script src="Scripts/angular.js"></script>
     <script src="Scripts/angular-route.js"></script>
     <script src="Scripts/jquery-3.1.1.js"></script>
     <script src="Scripts/bootstrap.js"></script>
+    <script src="Scripts/jquery.signalR-2.2.0.js"></script>
     <script src="Scripts/jquery-ui-1.12.1.js"></script>
-    <script src="Scripts/bootstrap-dialog.js"></script>
     <!--Modules-->
     <script src="Scripts/Modules/baseModule.js"></script>
     <!--Services-->
@@ -32,6 +32,9 @@
     <script src="Scripts/Controllers/channel.controller.js"></script>
     <script src="Scripts/Controllers/Admin/admin.controller.js"></script>
     <script src="Scripts/Controllers/Admin/favorites.controller.js"></script>
+    <!--Components-->
+    <script src="Scripts/Components/Password/password-modal.component.js"></script>
+    <script src="Scripts/Components/ValidatedInput/validated-input.component.js"></script>
     <!--Custom-->
     <script src="Scripts/Custom/main.js"></script>
 
