@@ -3,14 +3,15 @@
         "$scope",
         "$routeParams",
         function ($scope, $routeParams) {
-            $scope.favs = [];
 
             setTimeout(function () {
-                $scope.favs = $scope.channels.filter(function (channel) {
+                $scope.favorites = $scope.channels.filter(function (channel) {
                     return $scope.favorites.indexOf(channel.id) != -1;
                 });
 
             }, 100);
+
+            
 
         }
     ]);

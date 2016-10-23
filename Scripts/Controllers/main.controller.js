@@ -16,7 +16,7 @@ angular.module("baseModule")
             $scope.channels = [];
             $scope.messages = [];
             $scope.favorites = [];
-            $scope.admin = false;
+            $scope.admin = true;
 
 
             channelsApi.getChannels()
@@ -36,7 +36,6 @@ angular.module("baseModule")
            
             $scope.go = function (url, object) {
                 $location.path(url);
-                console.log(object);
                 return object;
             };
 

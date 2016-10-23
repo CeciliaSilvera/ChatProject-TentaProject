@@ -8,29 +8,26 @@ angular.module("baseModule")
         function ($scope, channelsApi) {
             $scope.title = "Edit Channels";
             $scope.newChannel = {};
-
+            
+            $scope.starEmpty = true;
+            $scope.starFull = false;
 
             $scope.addChannel = function () {
                 channelsApi.addChannel($scope.newChannel)
                     .then(function (data) {
                         console.log(data);
                         $scope.channels.push(data);
-
                     });
             }
             
             
-            $scope.makeFavorite = function (channel, $index) {
-                
-
-                $scope.favorites.push(channel);
-                $scope.saveFavorites();
-                
-
-                    $scope.channels.splice($index, 1);
-
-                
-                
+            $scope.makeFavorite = function (channelId) {
+                if ($.inArray(channelId, $scope.favorites) == -1) {
+                    $scope.favorites.push(channelId);
+                    $scope.saveFavorites();
+                        $scope.starEmpty = false;
+                        $scope.starFull = true;
+                }                                            
             }
 
             $scope.deleteChannel = function (channel) {

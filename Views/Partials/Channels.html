@@ -13,10 +13,12 @@
                 <button type="button"
                         class="btn favorite-btn-o"
                         ng-controller="AdminController"
-                        ng-click="makeFavorite(channel, $index)"
+                        ng-click="makeFavorite(channel)"
                         ng-hide="admin"
                         >
-                    <span class="glyphicon glyphicon-star-empty"></span>
+                    <span ng-show="starEmpty" class="glyphicon glyphicon-star-empty"></span>
+                    <span ng-show="starFull" class="glyphicon glyphicon-star" style="color:darkorange;"></span>
+
                     
                 </button>
             </td>
