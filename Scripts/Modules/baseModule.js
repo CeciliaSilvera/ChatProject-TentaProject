@@ -2,5 +2,6 @@
 /// <reference path="../angular-route.js" />
 
 angular.module("baseModule", [
-    "ngRoute"
+    "ngRoute",
+    "SignalR"
 ]);

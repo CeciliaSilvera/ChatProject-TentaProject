@@ -9,9 +9,7 @@
                     return $scope.favorites.indexOf(channel.id) != -1;
                 });
 
-            }, 100);
-
-            
+            }, 100);           
 
         }
     ]);

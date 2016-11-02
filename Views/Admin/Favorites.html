@@ -1,9 +1,7 @@
 ﻿<div class="col-md-12 table-responsive" ng-controller="FavoritesController">
-    <table class="table">
+    <table class="table col-md-8 col-md-offset-2">
         <tr>
-            <th class="col-md-8 col-md-offset-2">Name</th>
-
-
+            <th>Name</th>
         </tr>
         <tr style="cursor:pointer;" ng-repeat="channel in favorites track by $index" class="channels">
             <td ng-bind="channel.name" ng-click="go('/Channel/' + channel.id, channel)"></td>

@@ -12,8 +12,7 @@
             <td>
                 <button type="button"
                         class="btn favorite-btn-o"
-                        ng-controller="AdminController"
-                        ng-click="makeFavorite(channel)"
+                        ng-click="makeFavorite(channel, starEmpty, starFull)"
                         ng-hide="admin"
                         >
                     <span ng-show="starEmpty" class="glyphicon glyphicon-star-empty"></span>
@@ -25,7 +24,6 @@
             <td>
                 <button type="button"
                         class="btn trash-btn"
-                        ng-controller="AdminController"
                         ng-click="deleteChannel(channel)"
                         ng-hide="admin">
                     <span class="glyphicon glyphicon-trash"></span>
