@@ -17,6 +17,11 @@ a.navbar-brand, .navbar-nav > li > a{
 #btn-new-icon, #btn-new{
     padding-right:5px;
 }
+#btn-new{
+    background-color: ghostwhite;
+    color: green;
+    border: none;
+}
 
 #New-Channel, #new-message{
     margin-bottom:20px;
@@ -48,6 +53,9 @@ a.navbar-brand, .navbar-nav > li > a{
 }
 .message-rep{
     margin-bottom: 10px;
+}
+.channel-head{
+    background-color:ghostwhite;
 }
 .message-form > div{
     margin-bottom:5px;
