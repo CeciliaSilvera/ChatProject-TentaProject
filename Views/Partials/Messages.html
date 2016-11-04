@@ -1,15 +1,12 @@
-﻿<div class="col-md-12 table-responsive">
-    <table class="table table-hover">
-        <tr>
-            <th class="col-md-1">Sent</th>
-            <th class="col-md-1">Author</th>
-            <th class="col-md-4" >Message Body</th>
-        </tr>
-        <tr ng-repeat="message in messages | orderBy: '-' track by $index" ng-if="message.channelId == channel.id">
-            <td  ng-bind="message.timeSent | date: 'short'"></td>
-            <td  ng-bind="message.author"></td>
-            <td  ng-bind="message.body"></td>
-
-        </tr>
-    </table>
+﻿<div class="table-responsive">
+        
+        <div class="col-md-8 col-md-offset-2 message-rep" ng-repeat="message in messages | orderBy: '-' track by $index" ng-if="message.channelId == channel.id">
+            <div class="col-md-2"><img src="http://placehold.it/64x64"></div>
+            <div class="col-md-10 message">
+                <p class="col-md-8 lead">{{message.author}}<em> says :</em></p>
+                <p ng-bind="message.timeSent | date: 'short'" class="col-md-4"></p>
+                <p ng-bind="message.body" class="col-md-12"></p>
+            </div>
+            <hr class="col-md-12" />
+        </div>
 </div>
