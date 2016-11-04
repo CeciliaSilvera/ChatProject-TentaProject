@@ -28,10 +28,19 @@ angular.module("baseModule")
                     listeners: {
                         'recieveMessage': function (message) {
                             console.log(message);
+                            $rootScope.message = message;
+                            $scope.messages.push(message);
                             $rootScope.$apply();
                         }
                     },
+                    methods: ['recieveMessage'],
                     rootPath: 'http://dummyapi.kodalagom.se/signalr',
+                    queryParams: {
+                        'token': 'exampletoken'
+                    },
+                    errorHandler: function (error) {
+                        console.error(error);
+                    },
                     stateChanged: function (state) {
                         switch (state.newState) {
                             case $.signalR.connectionState.connecting:
