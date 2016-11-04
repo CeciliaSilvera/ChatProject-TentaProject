@@ -21,8 +21,6 @@ angular.module("baseModule")
             $scope.favorites = [];
             $scope.newChannel = {};
             $scope.admin = true;
-            $scope.starEmpty = true;
-            $scope.starFull = false;
             
                 new Hub('chatHub', {
                     listeners: {
@@ -62,7 +60,6 @@ angular.module("baseModule")
             
             
             
-            
             channelsApi.getChannels()
                 .then(function (data) {
                     if (data != null)
@@ -84,6 +81,7 @@ angular.module("baseModule")
             };
 
 
+            
 
             $scope.saveFavorites = function () {
                 var myFavs = $scope.favorites.map(function (fav) {
@@ -100,6 +98,7 @@ angular.module("baseModule")
                     $scope.favorites = JSON.parse(data);
                 }
             }
+            //$scope.loadFavorites();
             $scope.addChannel = function () {
                 channelsApi.addChannel($scope.newChannel)
                     .then(function (data) {
@@ -107,14 +106,18 @@ angular.module("baseModule")
                         $scope.channels.push(data);
                     });
             }
-            $scope.makeFavorite = function (channelId, elementE, elementF) {
-                if ($.inArray(channelId, $scope.favorites) == -1) {
-                    $scope.favorites.push(channelId);
-                    $scope.saveFavorites();
-                    elementE.starEmpty = false;
-                    elementF.starFull = true;
+            $scope.toggleFavorite = function (channel) {
+                var index = $scope.favorites.indexOf(channel);
+
+                if (index == -1) {
+                    $scope.favorites.push(channel);
                 }
+                else {
+                    $scope.favorites.splice(index, 1);
+                }
+                $scope.saveFavorites();
             }
+
             $scope.deleteChannel = function (channel) {
                 console.log("in function");
                 channelsApi.deleteChannel(channel.id)

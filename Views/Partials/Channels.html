@@ -12,11 +12,14 @@
             <td>
                 <button type="button"
                         class="btn favorite-btn-o"
-                        ng-click="makeFavorite(channel, starEmpty, starFull)"
+                        ng-click="toggleFavorite(channel)"
                         ng-hide="admin"
                         >
-                    <span ng-show="starEmpty" class="glyphicon glyphicon-star-empty"></span>
-                    <span ng-show="starFull" class="glyphicon glyphicon-star" style="color:darkorange;"></span>
+                    <span 
+                          ng-class="favorites.indexOf(channel) != -1 ? 
+                          'glyphicon glyphicon-star golden' : 
+                          'glyphicon glyphicon-star-empty'">
+                    </span>
 
                     
                 </button>

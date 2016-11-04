@@ -5,6 +5,7 @@ angular.module("baseModule")
         "$q",
         function ($http, $q) {
             var api = "http://dummyapi.kodalagom.se/api";
+            
             var channels = api + "/channels";
 
             this.getChannels = function () {

@@ -36,3 +36,7 @@ a.navbar-brand, .navbar-nav > li > a{
 #login-button{
     margin-top:20px;
 }
+
+.golden {
+    color:gold;
+}
